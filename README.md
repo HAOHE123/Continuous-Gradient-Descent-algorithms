@@ -14,8 +14,7 @@ The code covers:
 
 - Discrete‐time gradient descent (GD) and accelerated variants (e.g., Nesterov, Heavy‐Ball, Triple‐Momentum).  
 - Continuous‐time ODE counterparts for these algorithms.  
-- Circuit‐equivalent Simulink models illustrating how RLC networks mimic accelerated methods.  
-
+- Circuit‐equivalent Simulink models
 ---
 
 ## Repository Structure
