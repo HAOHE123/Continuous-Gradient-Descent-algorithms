@@ -4,20 +4,6 @@ Code and examples for “Analysis of gradient descent algorithms: Discrete to co
 
 ---
 
-## Table of Contents
-
-1. [Overview](#overview)  
-2. [Repository Structure](#repository-structure)  
-3. [Requirements](#requirements)  
-4. [Installation](#installation)  
-5. [Usage Examples](#usage-examples)  
-6. [File Descriptions](#file-descriptions)  
-7. [Circuit Models](#circuit-models)  
-8. [License](#license)  
-9. [Acknowledgments](#acknowledgments)
-
----
-
 ## Overview
 
 This repository contains reference implementations and examples used for the paper:
