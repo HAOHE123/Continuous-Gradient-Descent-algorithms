@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite:"
+title: "Analysis of gradient descent algorithms: Discrete to continuous domains and circuit equivalents"
+version: "v1.0"
+doi: "10.1016/j.sysconle.2025.106146"
+url: "https://github.com/HAOHE123/Continuous-Gradient-Descent-algorithms"
+authors:
+  - family-names: "Hao"
+    given-names: "He"
+  - family-names: "Silvestre"
+    given-names: "Daniel"
+  - family-names: "Silvestre"
+    given-names: "Carlos"
+date-released: "2025-06-04"
+license: "MIT"
+keywords:
+  - "Optimization-based controllers"
+  - "Iterative solvers"
+abstract: |
+  In recent years, there have been several advances in iterative optimization algorithms seen as closed-loop control systems in discrete-time that solve unconstrained optimization problems. In this paper, we extend these advances to the continuous setting and leverage circuit equivalence to present a possible implementation of such controllers. Next, we address constrained Quadratic Programming (QP) challenges within a primal–dual framework that appears in many controller definitions. By drawing parallels between second-order ODEs and circuit dynamics, our study bridges theoretical optimization with practical electrical analogues that can be designed and implemented for problems in systems engineering, robotics, and autonomous vehicles that could benefit from the low power and latency of these optimization-based controllers.
