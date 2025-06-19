@@ -1,4 +1,4 @@
-# Triple Momentum Method in Discrete
+# Triple Momentum Method 
 # Created by He HAO Ph.D. student (ist194693) with Github link (https://github.com/HAOHE123)
 
 import numpy as np
