@@ -10,12 +10,9 @@ from numpy.linalg import eig
 import matplotlib.pyplot as plt
 
 # import gradient methods funs
-import Gradient_Descent_D as GD
-import Heavy_Ball_D as HD
 import Nestrov_D as ND
 import Triple_Momentum_D as TD
 import Nestrov_C as NC
-import Two_Variables_C as TVC
 import Three_Variables_C as ThrVC
 
 import psutil, os, time
@@ -73,12 +70,6 @@ def Models(Dis_M,Con_M):
     # Step 2: Construct a purely diagonal matrix
     A = np.diag(desired_eigs)
 
-    # A is positive definite and has zero off-diagonal elements
-    print(A)
-
-    A = np.array([[0.90694345, 0.43057278],
-                [0.43057278, 0.68249958]])
-
     (e_vals, e_vect) = eig(A)
     L = max(e_vals)
     M = min(e_vals)
@@ -86,25 +77,18 @@ def Models(Dis_M,Con_M):
     # Global values
     global e
     e = np.zeros((DIMC, 1))
-    # Random value e
-    # the ode function calculates poorly with e (not recommended use e for continuous version)
-    # e = 1*np.random.rand(DIMC, 1)
-
 
     global c
     c = np.zeros((1, 1))
+    
     global Q
-
     Q = A
-    print('Q',Q)
+
     # Variable x and its matrix format X
     x = sy.MatrixSymbol('x', DIMC, 1)
     X = sy.Matrix(x)
-
     x0 = 2*np.ones((DIMC, 1))
-    # x0 = np.array(2)*x0
-
-    # x0 = sy.Matrix(x0)
+    
     # Objective function
     obj = 1/2*X.T*A*X - e.T*X + c
 
@@ -121,58 +105,29 @@ def Models(Dis_M,Con_M):
 
     # Discrete Model
     if Dis_M:
-        # itrations
+        # iterations
         global iterations
         iterations = 20
 
         # Gradient Descent
-        global x_GD 
-        x_GD = GD.Gradient_Descent(L,M,x,X,DIMC,x0,obj,iterations)
-        # print(x_GD.shape)
-
-        global x_HD 
-        x_HD = HD.Heavy_Ball(L,M,x,X,DIMC,x0,obj,iterations)
-        # print(x_HD.shape)
-
         global x_ND 
         x_ND = ND.Nestrov(L,M,x,X,DIMC,x0,obj,iterations)
-        # print(x_ND.shape)
 
         global x_tD 
         global x_TD 
         [x_tD, x_TD] = TD.Triple(L,M,x,X,DIMC,x0,obj,iterations)
-        # print(x_ND.shape)
 
 
     # Continuous Models
     if Con_M:
-        # Fuel Cost pi
-        pi = 350
+        # Parameter Pi
+        pi = 3000
 
-        # time span and steps
+        # time span 
         global t_span
         t_span = 2
-        global t_step
-        t_step = 0.01
-        
-        
-        process = psutil.Process(os.getpid())
-        start_mem = process.memory_info().rss / (1024 ** 2)  # in MB
-        start_time = time.time()
 
-        global x_NC
-        x_NC = NC.Nestrov_C(pi, L, M, Q, e, x0, DIMC, t_span, t_step)
-
-
-        end_time = time.time()
-        end_mem = process.memory_info().rss / (1024 ** 2)  # in MB
-
-        print(f"Time elapsed: {end_time - start_time:.2f} seconds")
-        print(f"Approx. memory used: {end_mem - start_mem:.2f} MB")
-
-        global x_TVC
-        x_TVC = TVC.Two_Variables_C(pi, L, M, Q, e, x0, DIMC, t_span, t_step)
-
+        # Three variable method and Triple Momentum method in continuous-time
         global x_ThrVC, x_FourVC 
         [x_ThrVC, x_FourVC ]= ThrVC.Three_Variables_C(pi, L, M, Q, e, x0, DIMC, t_span, t_step)
     
