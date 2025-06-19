@@ -1,4 +1,4 @@
-# Three Variables Method in Continuous
+# Triple Momentum Method in Continuous
 # Created by He HAO Ph.D. student (ist194693) with GitHub link (https://github.com/HAOHE123)
 
 import numpy as np
