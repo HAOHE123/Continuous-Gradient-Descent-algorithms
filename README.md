@@ -1,4 +1,4 @@
-# gradient-descent-algorithms
+# Continuous-Gradient-Descent-algorithms
 
 Code and examples for “Analysis of gradient descent algorithms: Discrete to continuous domains and circuit equivalents”
 
@@ -12,11 +12,10 @@ This repository contains reference implementations and examples used for the pap
 
 The code covers:
 
-- Discrete‐time gradient descent (GD) and accelerated variants (e.g., Nesterov, Heavy‐Ball, Triple‐Momentum).  
+- Discrete‐time gradient descent methods.  
 - Continuous‐time ODE counterparts for these algorithms.  
 - Circuit‐equivalent Simulink models
 ---
 
-## Repository Structure
 
 
