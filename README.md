@@ -6,7 +6,7 @@ Code and examples for “Analysis of gradient descent algorithms: Discrete to co
 
 ## Overview
 
-This repository contains reference implementations and examples used for the paper:
+This repository contains gradient functions used for the paper:
 
 > **He Hao, Daniel Silvestre, Carlos Silvestre**, “Analysis of gradient descent algorithms: Discrete to continuous domains and circuit equivalents,” *Systems & Control Letters*, June 4, 2025.
 
