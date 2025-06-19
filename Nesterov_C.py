@@ -1,4 +1,4 @@
-# Nesterov Method in Continuous Time
+# Nesterov Method in Continuous-Time
 # Created by He HAO Ph.D. student (ist194693)
 import numpy as np
 import sympy as sy
